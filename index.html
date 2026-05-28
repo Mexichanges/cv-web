@@ -1,112 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axel Fabricio Colchado Juárez - CV</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axel Fabricio Colchado Juárez | Portfolio CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="name">Axel Fabricio Colchado Juárez</h1>
-                <p class="title">Estudiante de Ingeniería en Tecnologías de la Información</p>
-                <p class="subtitle">Universidad Politécnica de Querétaro</p>
-                <div class="contact">
-                    <a href="mailto:tu-email@example.com" class="contact-link">📧 Email</a>
-                    <a href="https://github.com" target="_blank" class="contact-link">🐙 GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
-                </div>
-            </div>
-        </header>
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-slate-100 selection:bg-blue-500/30">
+<script>
+function changeLang(lang) {
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      el.textContent = text;
+    }
+  });
+}
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Resumen -->
-            <section class="section">
-                <h2 class="section-title">Resumen</h2>
-                <p class="section-text">
-                    Estudiante apasionado por la tecnología e innovación digital. Con experiencia práctica en desarrollo backend, administración de sistemas, redes y tecnologías de contenedorización. Interesado en infraestructura cloud, automatización y soluciones innovadoras.
-                </p>
-            </section>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      el.classList.add('opacity-100', 'translate-y-0');
+    }
+  });
+});
 
-            <!-- Competencias Técnicas -->
-            <section class="section">
-                <h2 class="section-title">Competencias Técnicas</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Backend & Bases de Datos</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">MySQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps & Infraestructura</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Linux (Ubuntu, Kali)</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Redes</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Configuración de Routers</span>
-                            <span class="skill-tag">Configuración de Switches</span>
-                            <span class="skill-tag">Topologías de Red</span>
-                            <span class="skill-tag">Simulaciones (Cisco Packet Tracer)</span>
-                            <span class="skill-tag">Cableado Estructurado</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Frontend & Web</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      el.classList.add('opacity-100', 'translate-y-0');
+    }
+  });
+});
 
-            <!-- Formación -->
-            <section class="section">
-                <h2 class="section-title">Formación</h2>
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3>Ingeniería en Tecnologías de la Información e Innovación Digital</h3>
-                        <span class="date">Universidad Politécnica de Querétaro</span>
-                    </div>
-                    <p class="education-detail">En curso | Especialización en infraestructura y desarrollo web</p>
-                </div>
-            </section>
+function downloadPDF() {
+  window.print();
+}
+</script>
 
-            <!-- Proyectos -->
-            <section class="section">
-                <h2 class="section-title">Proyectos</h2>
-                <div class="project-item">
-                    <h3>Proyecto Académico (Próximamente)</h3>
-                    <p class="project-description">Aquí irán tus proyectos destacados. Actualiza con tus logros.</p>
-                </div>
-            </section>
+<main class="max-w-6xl mx-auto px-6 py-10 md:py-16">
+  <div class="flex justify-end gap-3 mb-6">
+    <button onclick="changeLang('es')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition">ES</button>
+    <button onclick="changeLang('en')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition">EN</button>
+    <button onclick="downloadPDF()" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 transition flex items-center gap-2"><i class="fas fa-download"></i><span data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</span></button>
+  </div>
 
-            <!-- Certificaciones -->
-            <section class="section">
-                <h2 class="section-title">Certificaciones & Cursos</h2>
-                <div class="cert-item">
-                    <p>📚 Completa esta sección con tus certificaciones</p>
-                </div>
-            </section>
-        </main>
+  <!-- Hero Section -->
+  <section class="min-h-[70vh] flex items-center reveal opacity-0 translate-y-8 transition-all duration-700">
+    <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+      <div>
+        <p class="text-blue-400 mb-3 tracking-wide uppercase text-sm font-semibold" data-es="Ingeniería en TI e Innovación Digital" data-en="Information Technology & Digital Innovation Engineering">Ingeniería en TI e Innovación Digital</p>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">Axel Fabricio <span class="text-blue-400">Colchado Juárez</span></h1>
+        <p class="mt-6 text-slate-300 text-lg leading-relaxed" data-es="Estudiante enfocado en desarrollo web, infraestructura y redes. Me interesa crear soluciones funcionales que conecten software, bases de datos y arquitectura tecnológica. Tengo experiencia práctica desarrollando aplicaciones web, trabajando con Docker, MySQL, Linux y configuración de redes físicas y lógicas." data-en="Student focused on web development, infrastructure, and networking. I enjoy building functional solutions that connect software, databases, and technology infrastructure. I have practical experience developing web applications and working with Docker, MySQL, Linux, and network configuration.">
+          Estudiante enfocado en desarrollo web, infraestructura y redes. Me interesa crear soluciones funcionales que conecten software, bases de datos y arquitectura tecnológica. Tengo experiencia práctica desarrollando aplicaciones web, trabajando con Docker, MySQL, Linux y configuración de redes físicas y lógicas.
+        </p>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 Axel Fabricio Colchado Juárez. Hecho con ❤️</p>
-        </footer>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="mailto:juarezaxel205@gmail.com" class="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-2xl font-medium transition flex items-center gap-2"><i class="fas fa-envelope"></i><span data-es="Contacto" data-en="Contact">Contacto</span></a>
+          <a href="https://github.com/Mexichanges" target="_blank" class="border border-slate-700 hover:border-blue-500 hover:text-blue-400 px-6 py-3 rounded-2xl transition flex items-center gap-2"><i class="fab fa-github"></i>GitHub</a>
+          <a href="https://www.linkedin.com" target="_blank" class="border border-slate-700 hover:border-blue-500 hover:text-blue-400 px-6 py-3 rounded-2xl transition flex items-center gap-2"><i class="fab fa-linkedin"></i>LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 shadow-2xl backdrop-blur-sm hover:border-slate-700 transition">
+        <h2 class="text-xl font-semibold mb-6 flex items-center gap-2" data-es="Tecnologías principales" data-en="Core Technologies"><i class="fas fa-code text-blue-400"></i>Tecnologías principales</h2>
+        <div class="flex flex-wrap gap-3 text-sm">
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center gap-2 cursor-default"><i class="fab fa-php text-blue-400"></i>PHP</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center gap-2 cursor-default"><i class="fab fa-docker text-blue-400"></i>Docker</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition cursor-default">MySQL</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center gap-2 cursor-default"><i class="fab fa-html5 text-orange-400"></i>HTML</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center gap-2 cursor-default"><i class="fab fa-css3-alt text-sky-400"></i>CSS</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center gap-2 cursor-default"><i class="fab fa-linux text-yellow-400"></i>Linux</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition cursor-default">JavaScript</span>
+          <span class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 transition cursor-default">Networking</span>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Skills Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Habilidades Técnicas" data-en="Technical Skills"><i class="fas fa-star text-blue-400"></i>Habilidades Técnicas</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition">
+        <h3 class="font-semibold mb-3 text-lg flex items-center gap-2"><i class="fas fa-globe text-blue-400"></i><span data-es="Desarrollo Web" data-en="Web Development">Desarrollo Web</span></h3>
+        <p class="text-slate-300" data-es="PHP, HTML, CSS y desarrollo responsivo." data-en="PHP, HTML, CSS and responsive design.">PHP, HTML, CSS y desarrollo responsivo.</p>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition">
+        <h3 class="font-semibold mb-3 text-lg flex items-center gap-2"><i class="fas fa-server text-blue-400"></i><span data-es="Infraestructura" data-en="Infrastructure">Infraestructura</span></h3>
+        <p class="text-slate-300" data-es="Docker, Linux y despliegue en contenedores." data-en="Docker, Linux and container deployment.">Docker, Linux y despliegue en contenedores.</p>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition">
+        <h3 class="font-semibold mb-3 text-lg flex items-center gap-2"><i class="fas fa-network-wired text-blue-400"></i><span data-es="Redes" data-en="Networking">Redes</span></h3>
+        <p class="text-slate-300" data-es="Configuración de routers, switches y topologías." data-en="Router and switch configuration, network topologies.">Configuración de routers, switches y topologías.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Detail -->
+  <section class="mt-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3" data-es="Competencias Técnicas Detalladas" data-en="Detailed Technical Skills"><i class="fas fa-tools text-blue-400"></i>Competencias Técnicas Detalladas</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800">
+        <h4 class="font-semibold mb-4 text-blue-400" data-es="Backend & Bases de Datos" data-en="Backend & Databases">Backend & Bases de Datos</h4>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>PHP y desarrollo web backend</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>MySQL y diseño de bases de datos</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Arquitectura MVC</li>
+        </ul>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800">
+        <h4 class="font-semibold mb-4 text-blue-400" data-es="DevOps & Contenedorización" data-en="DevOps & Containerization">DevOps & Contenedorización</h4>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Docker y docker-compose</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Linux (Ubuntu, Kali Linux)</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Administración de sistemas</li>
+        </ul>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800">
+        <h4 class="font-semibold mb-4 text-blue-400" data-es="Redes & Topologías" data-en="Networks & Topologies">Redes & Topologías</h4>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Configuración de routers y switches</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Simulaciones con Cisco Packet Tracer</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Cableado estructurado</li>
+        </ul>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800">
+        <h4 class="font-semibold mb-4 text-blue-400" data-es="Frontend & Herramientas" data-en="Frontend & Tools">Frontend & Herramientas</h4>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>HTML5, CSS3 y JavaScript</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Control de versiones (Git/GitHub)</li>
+          <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i>Tailwind CSS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft Skills / Aptitudes Profesionales Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Aptitudes Profesionales" data-en="Professional Skills"><i class="fas fa-heart text-green-400"></i>Aptitudes Profesionales</h2>
+    <p class="text-slate-300 mb-8" data-es="Habilidades blandas y competencias transversales desarrolladas a través de experiencia académica, laboral y personal." data-en="Soft skills and cross-cutting competencies developed through academic, work and personal experience.">Habilidades blandas y competencias transversales desarrolladas a través de experiencia académica, laboral y personal.</p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Atención al Cliente -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-headset text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Atención al Cliente" data-en="Customer Service">Atención al Cliente</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Experiencia en tienda" data-en="Store experience">Experiencia en tienda</p>
+      </div>
+
+      <!-- Comunicación Efectiva -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-comments text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Comunicación" data-en="Communication">Comunicación</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Efectiva y clara" data-en="Effective and clear">Efectiva y clara</p>
+      </div>
+
+      <!-- Trabajo en Equipo -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-people-group text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Trabajo en Equipo" data-en="Teamwork">Trabajo en Equipo</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Colaboración activa" data-en="Active collaboration">Colaboración activa</p>
+      </div>
+
+      <!-- Liderazgo -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-crown text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Liderazgo" data-en="Leadership">Liderazgo</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Iniciativa y dirección" data-en="Initiative and direction">Iniciativa y dirección</p>
+      </div>
+
+      <!-- Resolución de Problemas -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-lightbulb text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Resolución" data-en="Problem Solving">Resolución</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Enfoque analítico" data-en="Analytical approach">Enfoque analítico</p>
+      </div>
+
+      <!-- Adaptabilidad -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-arrows-rotate text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Adaptabilidad" data-en="Adaptability">Adaptabilidad</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Flexible ante cambios" data-en="Flexible to changes">Flexible ante cambios</p>
+      </div>
+
+      <!-- Organización -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-list-check text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Organización" data-en="Organization">Organización</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Gestión de tareas" data-en="Task management">Gestión de tareas</p>
+      </div>
+
+      <!-- Disciplina -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-medal text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Disciplina" data-en="Discipline">Disciplina</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Práctica de karate" data-en="Karate practice">Práctica de karate</p>
+      </div>
+
+      <!-- Constancia -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-fire text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Constancia" data-en="Perseverance">Constancia</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Dedicación sostenida" data-en="Sustained dedication">Dedicación sostenida</p>
+      </div>
+
+      <!-- Aprendizaje Continuo -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-book text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Aprendizaje" data-en="Continuous Learning">Aprendizaje</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Actualización constante" data-en="Constant update">Actualización constante</p>
+      </div>
+
+      <!-- Trabajo bajo Presión -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-bolt text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Presión" data-en="Pressure">Presión</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Mantiene rendimiento" data-en="Maintains performance">Mantiene rendimiento</p>
+      </div>
+
+      <!-- Espíritu de Ayuda -->
+      <div class="group bg-slate-900/50 border border-slate-800 rounded-2xl p-4 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/10 transition cursor-default">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fas fa-hand-holding-heart text-green-400 text-lg"></i>
+          <span class="font-semibold text-sm" data-es="Ayuda" data-en="Helping Others">Ayuda</span>
+        </div>
+        <p class="text-slate-400 text-xs" data-es="Disposición de servicio" data-en="Service mindset">Disposición de servicio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Proyectos destacados" data-en="Featured Projects"><i class="fas fa-folder-open text-blue-400"></i>Proyectos destacados</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition">
+        <div class="w-full h-48 rounded-t-3xl bg-gradient-to-br from-slate-800 to-slate-900 border-b border-slate-800 flex items-center justify-center text-slate-500">
+          <i class="fas fa-shopping-cart text-4xl opacity-50"></i>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-semibold mb-2">MercaNet</h3>
+          <p class="text-slate-300 mb-4" data-es="Plataforma web orientada a compra y venta de productos y servicios." data-en="Web platform focused on buying and selling products and services.">Plataforma web orientada a compra y venta de productos y servicios.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">PHP</span>
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">MySQL</span>
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">HTML/CSS</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition">
+        <div class="w-full h-48 rounded-t-3xl bg-gradient-to-br from-slate-800 to-slate-900 border-b border-slate-800 flex items-center justify-center text-slate-500">
+          <i class="fas fa-boxes text-4xl opacity-50"></i>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-semibold mb-2">Universal Inventory</h3>
+          <p class="text-slate-300 mb-4" data-es="Sistema de inventario con enfoque cloud-native." data-en="Inventory management system with cloud-native approach.">Sistema de inventario con enfoque cloud-native.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">Docker</span>
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">PHP</span>
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-blue-400">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Experiencia" data-en="Experience"><i class="fas fa-briefcase text-blue-400"></i>Experiencia</h2>
+    <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800">
+      <div class="flex items-start gap-4 mb-6">
+        <i class="fas fa-graduation-cap text-blue-400 text-2xl mt-1"></i>
+        <div>
+          <h3 class="text-xl font-semibold" data-es="Estudiante - Universidad Politécnica de Querétaro" data-en="Student - Polytechnic University of Querétaro">Estudiante - Universidad Politécnica de Querétaro</h3>
+          <p class="text-slate-400 text-sm" data-es="Ingeniería en Tecnologías de la Información e Innovación Digital" data-en="Engineering in Information Technologies and Digital Innovation">Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+          <p class="text-slate-300 mt-3" data-es="Desarrollando proyectos académicos en desarrollo web, infraestructura y redes. Participación en laboratorios de programación, administración de sistemas y diseño de topologías." data-en="Developing academic projects in web development, infrastructure and networking. Participation in programming labs, systems administration and network topology design.">Desarrollando proyectos académicos en desarrollo web, infraestructura y redes. Participación en laboratorios de programación, administración de sistemas y diseño de topologías.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Certificaciones & Cursos" data-en="Certifications & Courses"><i class="fas fa-certificate text-blue-400"></i>Certificaciones & Cursos</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 flex items-start gap-4">
+        <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
+        <div>
+          <h3 class="font-semibold" data-es="Docker & Contenedorización" data-en="Docker & Containerization">Docker & Contenedorización</h3>
+          <p class="text-slate-400 text-sm" data-es="Completado" data-en="Completed">Completado</p>
+        </div>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 flex items-start gap-4">
+        <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
+        <div>
+          <h3 class="font-semibold" data-es="Fundamentos de Redes" data-en="Network Fundamentals">Fundamentos de Redes</h3>
+          <p class="text-slate-400 text-sm" data-es="En progreso" data-en="In progress">En progreso</p>
+        </div>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 flex items-start gap-4">
+        <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
+        <div>
+          <h3 class="font-semibold" data-es="Linux Administration" data-en="Linux Administration">Linux Administration</h3>
+          <p class="text-slate-400 text-sm" data-es="En progreso" data-en="In progress">En progreso</p>
+        </div>
+      </div>
+      <div class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 flex items-start gap-4">
+        <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
+        <div>
+          <h3 class="font-semibold" data-es="Desarrollo Web Avanzado" data-en="Advanced Web Development">Desarrollo Web Avanzado</h3>
+          <p class="text-slate-400 text-sm" data-es="En progreso" data-en="In progress">En progreso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" data-es="Contacto" data-en="Contact"><i class="fas fa-handshake text-blue-400"></i>Contacto</h2>
+    <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800">
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="mailto:juarezaxel205@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-800 hover:bg-slate-700 transition">
+          <i class="fas fa-envelope text-blue-400 text-2xl"></i>
+          <div>
+            <p class="text-xs text-slate-400" data-es="Correo" data-en="Email">Correo</p>
+            <p class="font-semibold">juarezaxel205@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://github.com/Mexichanges" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-800 hover:bg-slate-700 transition">
+          <i class="fab fa-github text-blue-400 text-2xl"></i>
+          <div>
+            <p class="text-xs text-slate-400">GitHub</p>
+            <p class="font-semibold">Mexichanges</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-800 hover:bg-slate-700 transition">
+          <i class="fab fa-linkedin text-blue-400 text-2xl"></i>
+          <div>
+            <p class="text-xs text-slate-400">LinkedIn</p>
+            <p class="font-semibold" data-es="Mi Perfil" data-en="My Profile">Mi Perfil</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-24 border-t border-slate-800 pt-8 text-slate-400 text-center pb-8">
+    <p class="mb-2" data-es="© 2026 Axel Fabricio Colchado Juárez. Todos los derechos reservados." data-en="© 2026 Axel Fabricio Colchado Juárez. All rights reserved.">© 2026 Axel Fabricio Colchado Juárez. Todos los derechos reservados.</p>
+    <p class="text-sm" data-es="Hecho con ❤️ usando HTML, CSS, Tailwind y JavaScript" data-en="Made with ❤️ using HTML, CSS, Tailwind and JavaScript">Hecho con ❤️ usando HTML, CSS, Tailwind y JavaScript</p>
+  </footer>
+</main>
 </body>
 </html>
