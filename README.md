@@ -1,162 +1,222 @@
 # CV Web - Axel Fabricio Colchado Juárez
 
-Sitio web moderno, minimalista y responsivo para tu currículum vitae.
+> Un CV moderno, minimalista y completamente responsivo con diseño dark mode profesional
 
-## 🚀 Características
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 
-- ✨ Diseño minimalista y profesional
-- 📱 Completamente responsivo (mobile, tablet, desktop)
-- ⚡ Animaciones suaves y efecto de carga
-- 🎨 Fácil de personalizar colores
-- 🔧 HTML, CSS y JavaScript vanilla (sin dependencias)
-- 📄 Optimizado para impresión
-- ♿ Semántico y accesible
+## ✨ Características
+
+- 🌙 **Dark Mode Profesional** - Diseño moderno y elegante que no cansa la vista
+- 🌐 **Bilingüe** - Cambia entre Español e Inglés con un clic
+- 📱 **Totalmente Responsivo** - Se adapta perfectamente a cualquier dispositivo
+- ⚡ **Animaciones Suaves** - Efectos visuales al hacer scroll y hover
+- 📄 **Descarga como PDF** - Botón para imprimir/guardar como PDF
+- 🚀 **Sin Dependencias Pesadas** - Usa Tailwind CSS desde CDN
+- ♿ **Accesible** - Código semántico y bien estructurado
+- 🎨 **Fácil de Personalizar** - Solo edita el HTML para cambiar contenido
 
 ## 📁 Estructura del Proyecto
 
 ```
 cv-web/
-├── index.html      # Estructura HTML principal
-├── styles.css      # Estilos CSS
-├── script.js       # Interactividad con JavaScript
+├── index.html      # Página principal con toda la estructura
+├── styles.css      # Estilos personalizados adicionales
+├── script.js       # Funciones de interactividad
 └── README.md       # Este archivo
 ```
+
+## 🚀 Inicio Rápido
+
+### Opción 1: Ver Localmente (Más rápido)
+
+1. **Clona el repositorio:**
+```bash
+git clone https://github.com/Mexichanges/cv-web.git
+cd cv-web
+```
+
+2. **Abre `index.html` en tu navegador:**
+   - Haz doble clic en `index.html` 
+   - O haz clic derecho → Abrir con → Tu navegador favorito
+
+**¡Listo!** Ya puedes ver el CV funcionando.
+
+### Opción 2: Con Servidor Local
+
+Si tienes Python instalado:
+
+```bash
+cd cv-web
+
+# Python 3
+python -m http.server 8000
+
+# Luego abre: http://localhost:8000
+```
+
+### Opción 3: Desplegar en GitHub Pages (Gratis y Permanente)
+
+1. Personaliza `index.html` con tu información
+2. Haz commit y push a tu repositorio
+3. Ve a **Settings** → **Pages** → Selecciona **main branch**
+4. ¡Accede a: `https://Mexichanges.github.io/cv-web` ✨
 
 ## 🛠️ Personalización
 
 ### 1. **Cambiar Información Personal**
 
-Abre `index.html` y modifica:
-
-- Tu nombre en `<title>` y `<h1 class="name">`
-- Tu profesión en `<p class="title">`
-- Tu universidad en `<p class="subtitle">`
-- Links de contacto en la sección `.contact`
-
-### 2. **Actualizar Skills/Competencias**
-
-Busca la sección `<!-- Competencias Técnicas -->` y modifica las categorías:
+Abre `index.html` y modifica en el HTML Hero Section:
 
 ```html
-<div class="skill-category">
-    <h3>Tu Categoría</h3>
-    <div class="skill-tags">
-        <span class="skill-tag">Tu Skill 1</span>
-        <span class="skill-tag">Tu Skill 2</span>
+<h1 class="text-5xl md:text-6xl font-bold leading-tight">
+  Axel Fabricio <span class="text-blue-400">Colchado Juárez</span>
+</h1>
+```
+
+### 2. **Actualizar Email y Links**
+
+Busca y reemplaza:
+- `juarezaxel205@gmail.com` → Tu email
+- `https://github.com/Mexichanges` → Tu GitHub
+- `https://www.linkedin.com` → Tu LinkedIn
+
+### 3. **Cambiar Tecnologías**
+
+En la sección "Tecnologías principales", modifica los tags:
+
+```html
+<span class="px-4 py-2 rounded-full bg-slate-800">Tu Tecnología</span>
+```
+
+### 4. **Agregar/Modificar Proyectos**
+
+En la sección "Proyectos destacados":
+
+```html
+<div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800">
+  <div class="w-full h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+    <!-- Tu ícono aquí -->
+  </div>
+  <div class="p-8">
+    <h3 class="text-2xl font-semibold mb-2">Nombre del Proyecto</h3>
+    <p class="text-slate-300 mb-4">Descripción del proyecto</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 rounded-full bg-slate-800 text-xs">Tecnología 1</span>
+      <span class="px-3 py-1 rounded-full bg-slate-800 text-xs">Tecnología 2</span>
     </div>
-</div>
-```
-
-### 3. **Agregar Tus Proyectos**
-
-En la sección `<!-- Proyectos -->`, reemplaza:
-
-```html
-<div class="project-item">
-    <h3>Nombre del Proyecto</h3>
-    <p class="project-description">Descripción del proyecto y tecnologías usadas</p>
-</div>
-```
-
-### 4. **Agregar Certificaciones**
-
-En la sección `<!-- Certificaciones -->`:
-
-```html
-<div class="cert-item">
-    <p>🏆 Nombre de la Certificación - Institución - Año</p>
+  </div>
 </div>
 ```
 
 ### 5. **Cambiar Colores**
 
-En `styles.css`, modifica las variables de color al inicio:
+Los colores principales están en Tailwind CSS. Para cambiar la paleta:
 
-```css
-:root {
-    --primary-color: #2c3e50;    /* Color azul oscuro */
-    --accent-color: #3498db;     /* Color azul claro */
-    --text-color: #2c3e50;
-    --light-text: #7f8c8d;
-    --background-color: #ecf0f1;
-    --white: #ffffff;
-}
+Busca en `index.html` las clases con `blue-400` y `blue-500` y cámbia por:
+
+- **Rojo**: `red-400`, `red-500`
+- **Verde**: `green-400`, `green-500`
+- **Púrpura**: `purple-400`, `purple-500`
+- **Naranja**: `orange-400`, `orange-500`
+
+## 🎨 Características Especiales
+
+### Sistema de Idiomas
+
+El CV incluye soporte para **Español e Inglés**. Los textos están marcados con:
+
+```html
+<span data-es="Texto en Español" data-en="English Text">Texto en Español</span>
 ```
 
-**Paletas de colores recomendadas:**
-- Profesional: `#2c3e50` + `#3498db`
-- Moderno: `#1a1a1a` + `#00d4ff`
-- Cálido: `#8b4513` + `#d2691e`
-- Fresco: `#27ae60` + `#2ecc71`
+Haz clic en los botones ES/EN para cambiar de idioma (se guarda automáticamente).
 
-O usa `script.js` para cambiar dinámicamente:
+### Descarga como PDF
 
-```javascript
-cambiarColorAcento('#00d4ff');
-cambiarColorPrimario('#1a1a1a');
-```
+Haz clic en el botón "Descargar PDF" para abrir el diálogo de impresión. Selecciona "Guardar como PDF" en tu navegador.
 
-## 🚀 Desplegar en GitHub Pages
+### Animaciones al Scroll
 
-### Opción 1: Automático (Recomendado)
-
-1. Ve a tu repositorio en GitHub
-2. Haz clic en **Settings** (⚙️)
-3. Ve a **Pages** en el menú lateral
-4. En **Source**, selecciona **Deploy from a branch**
-5. Selecciona **main** como rama
-6. Haz clic en **Save**
-
-Tu sitio estará disponible en: `https://Mexichanges.github.io/cv-web`
-
-### Opción 2: Manual con Git
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/Mexichanges/cv-web.git
-cd cv-web
-
-# Hacer cambios y verificarlos localmente
-# (Abre index.html en tu navegador)
-
-# Hacer commit y push
-git add .
-git commit -m "Actualizar CV con información personal"
-git push origin main
-```
-
-## 💻 Usar Localmente
-
-1. Descarga o clona el repositorio
-2. Abre `index.html` en tu navegador
-3. Realiza cambios en los archivos
-4. Recarga el navegador (Ctrl+R o Cmd+R)
-
-## 🎨 Tips de Personalización
-
-- **Emojis**: Puedes cambiar los emojis en los contactos y secciones
-- **Fuentes**: Busca en [Google Fonts](https://fonts.google.com) y reemplaza la fuente
-- **Sombras**: Ajusta los valores de `box-shadow` en CSS
-- **Espaciado**: Modifica los valores de `padding` y `margin`
+Los elementos se revelan suavemente al hacer scroll. Esto se maneja con JavaScript y la clase `reveal`.
 
 ## 📱 Responsive Design
 
-El diseño se adapta automáticamente a:
-- 📱 Móviles (320px+)
-- 📱 Tablets (768px+)
-- 💻 Desktop (900px+)
+El CV se adapta automáticamente a:
 
-## 🔗 Links Útiles
+| Dispositivo | Ancho | Clase Tailwind |
+|---|---|---|
+| 📱 Móvil | 320px+ | Estilos por defecto |
+| 📱 Tablet | 768px+ | `md:` |
+| 💻 Desktop | 1024px+ | `lg:` |
 
-- [Paleta de Colores](https://coolors.co)
-- [Iconos Emoji](https://emojipedia.org)
+## 🔗 Recursos Utilizados
+
+- **HTML5**: Estructura semántica
+- **Tailwind CSS**: Estilos desde CDN (sin instalación)
+- **Font Awesome 6**: Iconos profesionales
+- **JavaScript Vanilla**: Interactividad sin frameworks
+
+## 📚 Links Útiles
+
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Font Awesome Icons](https://fontawesome.com/icons)
+- [Color Palettes](https://coolors.co)
 - [Google Fonts](https://fonts.google.com)
-- [CSS Tricks](https://css-tricks.com)
 
-## 📝 Licencia
+## 🔧 Tips Avanzados
 
-Este proyecto es de código abierto y puedes usarlo libremente. ¡Personalízalo como desees! 🎉
+### Agregar más secciones
+
+Simplemente copia una sección existente y modifica el contenido. Asegúrate de mantener la clase `reveal` para las animaciones:
+
+```html
+<section class="mt-20 reveal opacity-0 translate-y-8 transition-all duration-700">
+  <!-- Tu contenido aquí -->
+</section>
+```
+
+### Agregar transiciones personalizadas
+
+Modifica los valores en `styles.css`:
+
+```css
+.reveal {
+  animation: slideUp 0.7s ease forwards;
+}
+```
+
+### Cambiar fuentes
+
+En `index.html`, agrega una nueva fuente desde [Google Fonts](https://fonts.google.com):
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=TuFuente&display=swap" rel="stylesheet">
+```
+
+Luego úsala en CSS:
+```css
+body {
+  font-family: 'Tu Fuente', sans-serif;
+}
+```
+
+## 📄 Licencia
+
+Este proyecto es completamente libre de usar y modificar. ¡Personalízalo como desees! 🎉
+
+## 👤 Autor
+
+Creado con ❤️ por **Axel Fabricio Colchado Juárez**
 
 ---
 
-**¿Necesitas ayuda?** Revisa el código HTML, CSS y JavaScript. Son simples y están bien comentados. 😊
+### ¿Necesitas ayuda?
+
+1. Lee los comentarios en el código (están bien explicados)
+2. Consulta la documentación de [Tailwind CSS](https://tailwindcss.com)
+3. Experimenta cambiando valores y viendo los resultados en tiempo real
+
+**¡Diviértete personalizando tu CV!** 🚀✨
